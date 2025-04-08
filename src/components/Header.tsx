@@ -48,7 +48,9 @@ const Header = ({ activeSection }: HeaderProps) => {
         >
           <div className="flex items-center text-3xl font-bold">
             <span className={`text-4xl ${isScrolled ? "text-primary" : "text-white"}`}>D</span>
-            <span className={`${isScrolled ? "text-primary" : "text-white"} ml-1 font-semibold`}>
+            <span
+              className={`${isScrolled ? "text-primary" : "text-white"} ml-1 hidden font-semibold md:block`}
+            >
               Dedit Accounting
             </span>
           </div>
@@ -78,7 +80,7 @@ const Header = ({ activeSection }: HeaderProps) => {
           <select
             value={i18n.language}
             onChange={handleChangeLanguage}
-            className={`block rounded-lg border-gray-300 px-2 py-2 focus:border-blue-500 focus:ring-blue-500 ${
+            className={`hidden rounded-lg border-gray-300 px-2 py-2 focus:border-blue-500 focus:ring-blue-500 md:block ${
               isScrolled
                 ? "bg-primary text-white hover:bg-primary-light"
                 : "bg-white text-primary hover:bg-light hover:text-primary-dark"
@@ -89,7 +91,7 @@ const Header = ({ activeSection }: HeaderProps) => {
           </select>
           <a
             href="tel:+998331339333"
-            className={`ml-4 transform rounded-full px-5 py-2 font-medium shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md ${
+            className={`ml-4 hidden transform rounded-full px-5 py-2 font-medium shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md md:block ${
               isScrolled
                 ? "bg-primary text-white hover:bg-primary-light"
                 : "bg-white text-primary hover:bg-light hover:text-primary-dark"
