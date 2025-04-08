@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+@layer base {
+  :root {
+    --primary: 222 81% 20%; /* #0a1e4c */
+    --primary-light: 222 51% 39%; /* #2c407c */
+    --secondary: 219 18% 51%; /* #6d7b97 */
+    --secondary-light: 217 30% 69%; /* #9eadc3 */
+    --secondary-dark: 219 22% 41%; /* #53647e */
+    --accent: 352 59% 61%; /* #d95c6c */
+    --light: 220 33% 97%; /* #f5f6f9 */
+  }
+
+  body {
+    @apply bg-light text-secondary;
+  }
+}
+
+.container {
+  @apply mx-auto px-4 sm:px-6 lg:px-8;
+  max-width: 1280px;
+}
