@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import logo1 from "../images/dedit logo.svg";
 
 const Footer = () => {
   const [t, i18n] = useTranslation("global");
@@ -29,7 +30,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-[#080833] text-white">
       {/* Wave shape divider */}
       <div className="relative">
         <svg
@@ -53,8 +54,7 @@ const Footer = () => {
             {/* Brand and description */}
             <div className="lg:col-span-5">
               <div className="mb-4 flex items-center">
-                <span className="text-4xl font-bold">D</span>
-                <span className="ml-1 text-lg font-semibold text-white">Dedit Accounting</span>
+                <img width={"150px"} src={logo1} alt="" />
               </div>
               <p className="mb-6 max-w-md text-secondary-light">{t("footer.footer1")}</p>
               <div className="flex space-x-4">
@@ -182,9 +182,7 @@ const Footer = () => {
                     />
                   </svg>
                   <span className="text-secondary-light">
-                    Toshkent shahar, Olmazor tumani
-                    <br />
-                    Langar ko'chasi, 76A
+                    Toshkent shahar, Olmazor tumani Langar ko'chasi, 76A
                   </span>
                 </li>
               </ul>

@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
+import logo1 from "../images/dedit logo.svg";
+import logo2 from "../images/dedit logo oq fon.svg";
+
 interface HeaderProps {
   activeSection: string;
 }
@@ -30,7 +33,6 @@ const Header = ({ activeSection }: HeaderProps) => {
     { id: "services", label: t("header.services") },
     { id: "pricing", label: t("header.pricing") },
     { id: "additional-services", label: t("header.additional-services") },
-    { id: "testimonials", label: t("header.testimonials") },
     { id: "faq", label: t("header.faq") },
     { id: "contact", label: t("header.contact") },
   ];
@@ -38,7 +40,7 @@ const Header = ({ activeSection }: HeaderProps) => {
   return (
     <header
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white py-2 shadow-md" : "bg-primary py-4 text-white"
+        isScrolled ? "bg-white py-2 shadow-md" : "bg-[#080833] py-4 text-white"
       }`}
     >
       <div className="flex items-center justify-between px-8">
@@ -47,17 +49,16 @@ const Header = ({ activeSection }: HeaderProps) => {
           className="flex items-center transition-transform hover:scale-105 hover:transform"
         >
           <div className="flex items-center text-3xl font-bold">
-            <span className={`text-4xl ${isScrolled ? "text-primary" : "text-white"}`}>D</span>
-            <span
-              className={`${isScrolled ? "text-primary" : "text-white"} ml-1 hidden font-semibold md:block`}
-            >
-              Dedit Accounting
-            </span>
+            {isScrolled ? (
+              <img width={"150px"} src={logo2} alt="" />
+            ) : (
+              <img width={"150px"} src={logo1} alt="" />
+            )}
           </div>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-6 space-x-6 md:flex">
+        <nav className="hidden items-center gap-2 space-x-6 md:gap-5 lg:flex">
           {navItems.map((item) => (
             <a
               key={item.id}
@@ -80,9 +81,9 @@ const Header = ({ activeSection }: HeaderProps) => {
           <select
             value={i18n.language}
             onChange={handleChangeLanguage}
-            className={`hidden rounded-lg border-gray-300 px-2 py-2 focus:border-blue-500 focus:ring-blue-500 md:block ${
+            className={`hidden rounded-lg border-gray-300 px-2 py-2 focus:border-blue-500 focus:ring-blue-500 xl:block ${
               isScrolled
-                ? "bg-primary text-white hover:bg-primary-light"
+                ? "hover:bg-[#080833]-light bg-[#080833] text-white"
                 : "bg-white text-primary hover:bg-light hover:text-primary-dark"
             }`}
           >
@@ -91,9 +92,9 @@ const Header = ({ activeSection }: HeaderProps) => {
           </select>
           <a
             href="tel:+998331339333"
-            className={`ml-4 hidden transform rounded-full px-5 py-2 font-medium shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md md:block ${
+            className={`ml-4 hidden transform rounded-full px-5 py-2 font-medium shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md xl:block ${
               isScrolled
-                ? "bg-primary text-white hover:bg-primary-light"
+                ? "hover:bg-[#080833]-light bg-[#080833] text-white"
                 : "bg-white text-primary hover:bg-light hover:text-primary-dark"
             } `}
           >
@@ -103,7 +104,7 @@ const Header = ({ activeSection }: HeaderProps) => {
 
         {/* Mobile menu button */}
         <button
-          className="focus:outline-none md:hidden"
+          className="focus:outline-none xl:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
         >
@@ -135,8 +136,8 @@ const Header = ({ activeSection }: HeaderProps) => {
 
       {/* Mobile Navigation */}
       <div
-        className={`overflow-hidden bg-white shadow-lg transition-all duration-300 ease-in-out md:hidden ${
-          isMobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+        className={`overflow-hidden bg-white shadow-lg transition-all duration-300 ease-in-out xl:hidden ${
+          isMobileMenuOpen ? "max-w-7xl opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="container mx-auto px-4 py-3">
@@ -157,7 +158,7 @@ const Header = ({ activeSection }: HeaderProps) => {
             ))}
             <a
               href="tel:++998 33 133 93 33"
-              className="flex items-center py-2 font-medium text-primary"
+              className="flex items-center rounded-lg border p-2 font-medium text-primary"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <svg
@@ -176,6 +177,14 @@ const Header = ({ activeSection }: HeaderProps) => {
               </svg>
               +998 33 133 93 33
             </a>
+            <select
+              value={i18n.language}
+              onChange={handleChangeLanguage}
+              className={`: "bg-white hover:text-primary-dark" rounded-lg border border-gray-300 px-2 py-2 text-primary hover:bg-light focus:border-blue-500 focus:ring-blue-500 md:block`}
+            >
+              <option value="uz">Uzb</option>
+              <option value="ru">Rus</option>
+            </select>
           </nav>
         </div>
       </div>

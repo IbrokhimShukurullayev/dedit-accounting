@@ -156,11 +156,12 @@ const Pricing = ({ setActiveSection }: PricingProps) => {
                   </ul>
                 </div>
 
-                <button
-                  className={`w-full rounded-full py-3 font-semibold transition-all duration-300 ${tier.popular ? "transform bg-primary text-white shadow-md hover:-translate-y-1 hover:bg-primary-light hover:shadow-lg" : "transform bg-light text-primary hover:-translate-y-1 hover:bg-secondary-light hover:shadow-md"}`}
+                <a
+                  href="#contact"
+                  className={`w-full rounded-full py-3 text-center font-semibold transition-all duration-300 ${tier.popular ? "transform bg-primary text-white shadow-md hover:-translate-y-1 hover:bg-primary-light hover:shadow-lg" : "transform bg-light text-primary hover:-translate-y-1 hover:bg-secondary-light hover:shadow-md"}`}
                 >
                   {t("pricing.select")}
-                </button>
+                </a>
               </div>
             </div>
           ))}

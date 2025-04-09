@@ -33,7 +33,7 @@ const Hero = ({ setActiveSection }: HeroProps) => {
   return (
     <div
       ref={sectionRef}
-      className="relative overflow-hidden bg-primary pb-16 pt-24 text-white md:pb-24 md:pt-32"
+      className="relative overflow-hidden bg-[#080833] pb-16 pt-24 text-white md:pb-24 md:pt-32"
     >
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
