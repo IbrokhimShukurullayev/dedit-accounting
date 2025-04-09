@@ -12,10 +12,8 @@ const Header = ({ activeSection }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [t, i18n] = useTranslation("global");
-  console.log("Joriy til:", i18n.language);
 
   const handleChangeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log("Tanlangan til:", event.target.value);
     i18n.changeLanguage(event.target.value);
   };
 

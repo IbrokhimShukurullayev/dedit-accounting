@@ -58,8 +58,8 @@ const Contact = ({ setActiveSection }: ContactProps) => {
 💬 *Xabar:* ${formData.message}
     `;
 
-    const botToken = "7424974828:AAEOy8CEJwLaJ3XQYxYtLk9UXmVHbvpwZhg";
-    const chatId = "-4267196528";
+    const botToken = "7517820869:AAFyWRmAZGRK2zprhPGzn01KQmvTbApCyQ0";
+    const chatId = "-1002503939179";
 
     try {
       await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
@@ -142,7 +142,7 @@ const Contact = ({ setActiveSection }: ContactProps) => {
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full rounded-lg border border-gray-200 px-4 py-3"
-                      placeholder="John Doe"
+                      placeholder="Ismingizni kriting"
                     />
                   </div>
 

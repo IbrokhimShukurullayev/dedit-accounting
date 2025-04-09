@@ -23,12 +23,6 @@ const Footer = () => {
     { name: t("servicess.bookkeeping"), href: "#services" },
   ];
 
-  const legalLinks = [
-    { name: t("footer.footer4"), href: "#" },
-    { name: t("footer.footer5"), href: "#" },
-    { name: t("footer.footer6"), href: "#" },
-  ];
-
   return (
     <footer className="bg-[#080833] text-white">
       {/* Wave shape divider */}
@@ -194,15 +188,6 @@ const Footer = () => {
               <p className="mb-4 text-sm text-secondary-light md:mb-0">
                 &copy; {currentYear} {t("footer.footer3")}
               </p>
-              <ul className="flex flex-wrap space-x-6 text-sm text-secondary-light">
-                {legalLinks.map((link) => (
-                  <li key={link.name}>
-                    <a href={link.href} className="transition-colors duration-200 hover:text-white">
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
